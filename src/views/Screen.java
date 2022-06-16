@@ -11,6 +11,8 @@ package views;
  */
 public class Screen extends javax.swing.JFrame {
 
+    double memoryOp = 0;
+    String lastOp = "";
     /**
      * Creates new form Screen
      */
@@ -64,6 +66,11 @@ public class Screen extends javax.swing.JFrame {
         btnBorrar.setMaximumSize(new java.awt.Dimension(60, 60));
         btnBorrar.setMinimumSize(new java.awt.Dimension(60, 60));
         btnBorrar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnLimpiar.setText("C");
@@ -71,6 +78,11 @@ public class Screen extends javax.swing.JFrame {
         btnLimpiar.setMaximumSize(new java.awt.Dimension(60, 60));
         btnLimpiar.setMinimumSize(new java.awt.Dimension(60, 60));
         btnLimpiar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnCorregir.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
         btnCorregir.setText("<");
@@ -78,6 +90,11 @@ public class Screen extends javax.swing.JFrame {
         btnCorregir.setMaximumSize(new java.awt.Dimension(60, 60));
         btnCorregir.setMinimumSize(new java.awt.Dimension(60, 60));
         btnCorregir.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnCorregir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCorregirActionPerformed(evt);
+            }
+        });
 
         btnDividir.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnDividir.setText("÷");
@@ -85,6 +102,11 @@ public class Screen extends javax.swing.JFrame {
         btnDividir.setMaximumSize(new java.awt.Dimension(60, 60));
         btnDividir.setMinimumSize(new java.awt.Dimension(60, 60));
         btnDividir.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDividirActionPerformed(evt);
+            }
+        });
 
         btnSiete.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnSiete.setText("7");
@@ -128,6 +150,11 @@ public class Screen extends javax.swing.JFrame {
         btnMultiplicar.setMaximumSize(new java.awt.Dimension(60, 60));
         btnMultiplicar.setMinimumSize(new java.awt.Dimension(60, 60));
         btnMultiplicar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicarActionPerformed(evt);
+            }
+        });
 
         btnCuatro.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnCuatro.setText("4");
@@ -171,6 +198,11 @@ public class Screen extends javax.swing.JFrame {
         btnRestar.setMaximumSize(new java.awt.Dimension(60, 60));
         btnRestar.setMinimumSize(new java.awt.Dimension(60, 60));
         btnRestar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnRestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestarActionPerformed(evt);
+            }
+        });
 
         btnUno.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnUno.setText("1");
@@ -214,6 +246,11 @@ public class Screen extends javax.swing.JFrame {
         btnSumar.setMaximumSize(new java.awt.Dimension(60, 60));
         btnSumar.setMinimumSize(new java.awt.Dimension(60, 60));
         btnSumar.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnSumar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumarActionPerformed(evt);
+            }
+        });
 
         btnCero.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         btnCero.setText("0");
@@ -257,6 +294,11 @@ public class Screen extends javax.swing.JFrame {
         btnIgual.setMaximumSize(new java.awt.Dimension(60, 60));
         btnIgual.setMinimumSize(new java.awt.Dimension(60, 60));
         btnIgual.setPreferredSize(new java.awt.Dimension(60, 60));
+        btnIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIgualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -404,6 +446,46 @@ public class Screen extends javax.swing.JFrame {
         this.printNumber("000");
     }//GEN-LAST:event_btnTripleCeroActionPerformed
 
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
+        this.setOperation("+");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSumarActionPerformed
+
+    private void btnRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestarActionPerformed
+        this.setOperation("-");
+    }//GEN-LAST:event_btnRestarActionPerformed
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
+        this.setOperation("*");
+    }//GEN-LAST:event_btnMultiplicarActionPerformed
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
+        this.setOperation("/");
+    }//GEN-LAST:event_btnDividirActionPerformed
+
+    private void btnCorregirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorregirActionPerformed
+        String pantalla = this.txtPantalla.getText();
+        if(pantalla.length() > 1){
+            pantalla = pantalla.substring(0, pantalla.length() - 1);
+        } else {
+            pantalla = "0";
+        }
+        this.txtPantalla.setText(pantalla);
+    }//GEN-LAST:event_btnCorregirActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        this.txtPantalla.setText("0");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        this.txtPantalla.setText("0");
+        this.lastOp = "";
+        this.memoryOp = 0;
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+        this.setOperation("=");
+    }//GEN-LAST:event_btnIgualActionPerformed
+
     private void printNumber(String buttonText){
         String pantalla = this.txtPantalla.getText();
         if(pantalla.length() < 8){
@@ -412,14 +494,59 @@ public class Screen extends javax.swing.JFrame {
                     pantalla += ".";
                 } 
             } else {
-                if(pantalla.equals("0")){
-                    pantalla = buttonText;
+                if(this.lastOp.equals("=")){
+                        if(!buttonText.equals("000")){
+                            pantalla = buttonText;                        
+                        } else {
+                            pantalla = "0";
+                        }
+                        this.lastOp = "";
                 } else {
-                    pantalla += buttonText;            
-                }   
+                    if(pantalla.equals("0")){
+                        pantalla = buttonText;
+                    } else {
+                        pantalla += buttonText;            
+                    }
+                }
             }            
             this.txtPantalla.setText(pantalla);
         }    
+    }
+    
+    private void setOperation(String sign){
+        double screenValue = Double.parseDouble(this.txtPantalla.getText());
+        String pantalla = "";
+        switch(lastOp){
+            case "+":
+                this.memoryOp += screenValue;
+                break;
+            case "-":
+                this.memoryOp -= screenValue;
+                break;
+            case "/":
+                this.memoryOp /= screenValue;
+                break;
+            case "*":
+                this.memoryOp *= screenValue;
+                break;
+            default: 
+                this.memoryOp = screenValue;
+        }
+        if(sign.equals("=")){
+            if(this.memoryOp % 1 == 0){
+                int absValue = (int) Math.round(this.memoryOp);
+                this.txtPantalla.setText(String.valueOf(absValue));    
+            } else {
+                this.txtPantalla.setText(String.valueOf(this.memoryOp));    
+            }            
+            this.lastOp = "=";
+            this.memoryOp = 0;
+        } else {
+            this.txtPantalla.setText("0");  
+            this.lastOp = sign;
+        }
+        
+        
     }
     /**
      * @param args the command line arguments
